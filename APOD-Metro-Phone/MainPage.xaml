@@ -19,11 +19,8 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="APOD Metro">
-            <controls:Panorama.Background>
-        <ImageBrush ImageSource="http://apod.nasa.gov/apod/calendar/today.jpg"/>
-            </controls:Panorama.Background>
- 
+    <controls:Panorama Name="panoMain"  Title="APOD Metro">
+            
             <!--Panorama item one-->
             <controls:PanoramaItem Header="today">
                 <!--Double line list with text wrapping-->
