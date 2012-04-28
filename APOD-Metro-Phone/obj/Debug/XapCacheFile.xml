@@ -1,9 +1,9 @@
-﻿<xapCache source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\APOD_Metro_Phone.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="3/25/2012 2:29:41 PM">
-  <file source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="3/25/2012 2:03:44 PM" />
-  <file source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\Background.png" archivePath="Background.png" lastWriteTime="3/25/2012 2:03:33 PM" />
-  <file source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="3/25/2012 2:03:33 PM" />
-  <file source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\APOD-Metro-Phone.dll" archivePath="APOD-Metro-Phone.dll" lastWriteTime="3/25/2012 2:29:40 PM" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="9/15/2011 4:36:26 PM" />
-  <file source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="3/25/2012 2:03:33 PM" />
-  <file source="C:\git\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="3/25/2012 2:03:44 PM" />
+﻿<xapCache source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\APOD_Metro_Phone.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="4/28/2012 3:18:12 PM">
+  <file source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="4/28/2012 12:05:02 PM" />
+  <file source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Background.png" archivePath="Background.png" lastWriteTime="4/28/2012 9:17:31 AM" />
+  <file source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="4/28/2012 9:17:31 AM" />
+  <file source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\APOD-Metro-Phone.dll" archivePath="APOD-Metro-Phone.dll" lastWriteTime="4/28/2012 3:18:11 PM" />
+  <file source="c:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="3/19/2012 4:29:06 PM" />
+  <file source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="4/28/2012 9:17:31 AM" />
+  <file source="C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="4/28/2012 10:41:31 AM" />
 </xapCache>
