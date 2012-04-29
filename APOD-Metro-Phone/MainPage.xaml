@@ -58,16 +58,21 @@
           <ListBox Name="UIList" Margin="0,0,-12,0" ItemsSource="{StaticResource list}">
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <controls:PivotItem>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                  <!--Replace rectangle with image-->
-                  <Image Source="{Binding ThumbUrl}"  Width="100"  Margin="12,0,9,0"/>
-                  <StackPanel Width="311">
-                    <TextBlock Text="{Binding Date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                  </StackPanel>
-                </StackPanel>
-                </controls:PivotItem>
+                <Button Name="OlderButton" Click="OlderButton_Click" Tag="{Binding}" >
+                  <Button.Template>
+                    <ControlTemplate>
+                     
+                      <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                       
+                        <Image Source="{Binding ThumbUrl}"  Width="100"  Margin="12,0,9,0"/>
+                        <StackPanel Width="311">
+                          <TextBlock Text="{Binding DateString}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        </StackPanel>
+                      </StackPanel>
+                      
+                    </ControlTemplate>
+                  </Button.Template>
+                </Button>
               </DataTemplate>
             </ListBox.ItemTemplate>
           </ListBox>

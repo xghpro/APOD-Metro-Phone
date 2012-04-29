@@ -36,7 +36,7 @@ namespace APOD_Metro_Phone {
         //bitmap2.ImageOpened += bitmap2_ImageOpened;
         //http://apod.nasa.gov/apod/ap120427.html
         LoadDescription();
-        TodayButton.Click += TodayButton_Click;
+        TodayButton.Click += TodayButton_Click; 
        
       }
     }
@@ -58,7 +58,7 @@ namespace APOD_Metro_Phone {
     {
       string html = e.Result;
       string one = html.Substring(html.IndexOf("Explanation:"));
-      string two = one.Substring(one.IndexOf(">"));
+      string two = one.Substring(one.IndexOf(">")+1);
       string three = two.Substring(0, two.IndexOf(@"<p>"));
       Explanation.Text = three;
     }
@@ -88,6 +88,15 @@ namespace APOD_Metro_Phone {
       var y = wbOutput.PixelHeight;
 
       return wbOutput;
+    }
+
+    private void OlderButton_Click(object sender, RoutedEventArgs e)
+    {
+      Button b = sender as Button;
+      string urlTmpl = @"/TodayPage.xaml?url={0}";
+      ApodItem item = b.Tag as ApodItem;
+      NavigationService.Navigate(new Uri(string.Format(urlTmpl, item.PicUrl), UriKind.Relative));
+
     }
   }
 }

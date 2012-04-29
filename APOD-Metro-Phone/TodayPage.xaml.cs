@@ -22,7 +22,7 @@ namespace APOD_Metro_Phone
 
     private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
     {
-      string htmlTmpl = "<body bgcolor='black' marginheight='0' marginwidth='0'><img src='{0}'></body>";
+      string htmlTmpl = "<body bgcolor='black' marginheight='0' marginwidth='0'><img height='100%' src='{0}'></body>";
       string url = NavigationContext.QueryString["url"]; 
       Browser.NavigateToString(string.Format(htmlTmpl,url));
     }

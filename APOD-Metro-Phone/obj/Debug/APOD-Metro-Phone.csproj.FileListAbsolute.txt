@@ -12,8 +12,6 @@ C:\git\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\APOD-Metro-Phone.g.resources
 C:\git\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\APOD-Metro-Phone.dll
 C:\git\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\APOD-Metro-Phone.pdb
 C:\git\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\XapCacheFile.xml
-C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\ApplicationIcon.png
-C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\Background.png
 C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\APOD-Metro-Phone.dll
 C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\APOD-Metro-Phone.pdb
 C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\AppManifest.xaml

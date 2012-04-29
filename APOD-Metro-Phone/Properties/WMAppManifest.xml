@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{21b2e01c-8bf9-473d-aa98-b4bf2155f3c3}" Title="APOD_Metro_Phone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="APOD_Metro_Phone author" Description="Sample description" Publisher="APOD_Metro_Phone">
+  <App xmlns="" ProductID="{21b2e01c-8bf9-473d-aa98-b4bf2155f3c3}" Title="APOD" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="APOD_Metro_Phone author" Description="Sample description" Publisher="APOD_Metro_Phone">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES"/>
@@ -27,7 +27,7 @@
         <TemplateType5>
           <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>APOD_Metro_Phone</Title>
+          <Title></Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>
