@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -30,16 +31,29 @@ namespace APOD_Metro_Phone {
         Uri uri = new Uri("http://apod.nasa.gov/apod/calendar/today.jpg");
         var bitmap2 = new BitmapImage(uri);
         bitmap2.CreateOptions = BitmapCreateOptions.None;
-        bitmap2.ImageOpened += new EventHandler<RoutedEventArgs>(bitmap2_ImageOpened);
-        bitmap2.ImageFailed += new EventHandler<ExceptionRoutedEventArgs>(bitmap2_ImageFailed);
-        
+        //bitmap2.ImageOpened += bitmap2_ImageOpened;
+        //http://apod.nasa.gov/apod/ap120427.html
+        LoadDescription();
       }
     }
 
-    void bitmap2_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+    private void LoadDescription()
     {
-      throw new NotImplementedException();
+      WebClient client = new WebClient();
+      client.DownloadStringCompleted += LoadDescriptionCompleted;
+      client.DownloadStringAsync(new Uri("http://apod.nasa.gov/apod/ap120427.html"));
+
     }
+
+    private void LoadDescriptionCompleted(object sender, DownloadStringCompletedEventArgs e)
+    {
+      string html = e.Result;
+      string one = html.Substring(html.IndexOf("Explanation:"));
+      string two = one.Substring(one.IndexOf(">"));
+      string three = two.Substring(0, two.IndexOf(@"<p>"));
+      Explanation.Text = three;
+    }
+
 
     void bitmap2_ImageOpened(object sender, RoutedEventArgs e)
     {
