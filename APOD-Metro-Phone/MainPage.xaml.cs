@@ -16,7 +16,9 @@ using Microsoft.Phone.Controls;
 namespace APOD_Metro_Phone {
   public partial class MainPage : PhoneApplicationPage {
     // Constructor
-    public MainPage() {
+    public MainPage()
+    {
+      //LoadList();
       InitializeComponent();
 
       // Set the data context of the listbox control to the sample data
@@ -34,6 +36,7 @@ namespace APOD_Metro_Phone {
         //bitmap2.ImageOpened += bitmap2_ImageOpened;
         //http://apod.nasa.gov/apod/ap120427.html
         LoadDescription();
+       
       }
     }
 
@@ -54,20 +57,13 @@ namespace APOD_Metro_Phone {
       Explanation.Text = three;
     }
 
+  
 
-    void bitmap2_ImageOpened(object sender, RoutedEventArgs e)
+    private void LoadListCompleted(object sender, DownloadStringCompletedEventArgs e)
     {
-      var bitmap2 = (BitmapImage) sender;
-      var x = 1024f / bitmap2.PixelWidth;
-      var y = 800f / bitmap2.PixelHeight;
-
-      var lcBrush2 = new ImageBrush()
-      {
-        Stretch = Stretch.UniformToFill,
-        ImageSource = ResizeImage(bitmap2, x, y)
-      };
-
-      panoMain.Background = lcBrush2;
+     
+      ApodItem item = new ApodItem();
+      UIList.Items.Add(item);
     }
 
     public ImageSource ResizeImage(ImageSource biInput, double DeltaX, double DeltaY)
