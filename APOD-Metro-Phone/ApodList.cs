@@ -14,8 +14,10 @@ namespace APOD_Metro_Phone
 {
   public class ApodItem
   {
-    public string photo { get; set; }
-    public string title { get; set; }
+    public DateTime Date { get; set; }
+    public string ThumbUrl { get; set; }
+    public string Title { get; set; }
+    public string PageUrl { get; set; }
   }
 
   public class ApodList : ObservableCollection<ApodItem>
@@ -23,15 +25,19 @@ namespace APOD_Metro_Phone
     public ApodList()
     {
 
-      // http://apod.nasa.gov/apod/calendar/S_120427.jpg
-      var urltmpl = "http://apod.nasa.gov/apod/calendar/S_{0:00}{1:00}{2:00}.jpg";
+      //thumb http://apod.nasa.gov/apod/calendar/S_120427.jpg
+      //page http://apod.nasa.gov/apod/ap120429.html
+
+      var thumbtmpl = "http://apod.nasa.gov/apod/calendar/S_{0:00}{1:00}{2:00}.jpg";
+      var pagetmpl = "http://apod.nasa.gov/apod/ap{0:00}{1:00}{2:00}.jpg";
       var date = DateTime.Now;
       
       for (int day = 0; day < 13; day++)
       {
         var today = date.AddDays(-day);
-        var url = string.Format(urltmpl, today.Year-2000, today.Month, today.Day);
-        Add(new ApodItem { photo = url, title = date.ToString()});
+        var thumb = string.Format(thumbtmpl, today.Year - 2000, today.Month, today.Day); 
+        var page = string.Format(pagetmpl, today.Year - 2000, today.Month, today.Day);
+        Add(new ApodItem { ThumbUrl = thumb, Date=date, Title = "title", PageUrl = page});
 
       }
       

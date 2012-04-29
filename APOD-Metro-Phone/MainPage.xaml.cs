@@ -36,8 +36,14 @@ namespace APOD_Metro_Phone {
         //bitmap2.ImageOpened += bitmap2_ImageOpened;
         //http://apod.nasa.gov/apod/ap120427.html
         LoadDescription();
+        TodayButton.Click += TodayButton_Click;
        
       }
+    }
+
+    void TodayButton_Click(object sender, RoutedEventArgs e)
+    {
+      NavigationService.Navigate(new Uri(@"/TodayPage.xaml?url=http://apod.nasa.gov/apod/image/1204/reddwarf_nielsen_1440.jpg", UriKind.Relative));
     }
 
     private void LoadDescription()

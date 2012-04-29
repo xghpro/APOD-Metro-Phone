@@ -25,7 +25,7 @@
       <my1:AdControl AdUnitId="87725" Name="adControl1" ApplicationId="42757b14-5f28-496c-8b1a-3e2371313787" HorizontalAlignment="Center" Width="480" Height="80" />
     </StackPanel>
          <!--Panorama control-->
-    <controls:Panorama Name="panoMain" Grid.Row="0"  Title="APOD Metro">
+    <controls:Panorama Name="panoMain" Grid.Row="0"  Title="APOD">
       <controls:Panorama.Background>
         <ImageBrush ImageSource="/APOD-Metro-Phone;component/black.png" />
       </controls:Panorama.Background>
@@ -34,7 +34,13 @@
         <Grid>
           <ScrollViewer>
             <StackPanel>
-              <Image Source="http://apod.nasa.gov/apod/calendar/today.jpg"></Image>
+              <Button Name="TodayButton">
+                <Button.Template>
+                  <ControlTemplate>
+                    <Image Source="http://apod.nasa.gov/apod/calendar/today.jpg"></Image>
+                  </ControlTemplate>
+                </Button.Template>
+              </Button>
               <my:HtmlTextBlock x:Name="Explanation" MinHeight="188" TextWrapping="Wrap" />
             </StackPanel>
           </ScrollViewer>
@@ -52,15 +58,16 @@
           <ListBox Name="UIList" Margin="0,0,-12,0" ItemsSource="{StaticResource list}">
             <ListBox.ItemTemplate>
               <DataTemplate>
+                <controls:PivotItem>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                   <!--Replace rectangle with image-->
-                  <Image Source="{Binding photo}"/>
-                  <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
+                  <Image Source="{Binding ThumbUrl}"  Width="100"  Margin="12,0,9,0"/>
                   <StackPanel Width="311">
-                    <TextBlock Text="{Binding photo}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                    <TextBlock Text="{Binding title}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <TextBlock Text="{Binding Date}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                   </StackPanel>
                 </StackPanel>
+                </controls:PivotItem>
               </DataTemplate>
             </ListBox.ItemTemplate>
           </ListBox>

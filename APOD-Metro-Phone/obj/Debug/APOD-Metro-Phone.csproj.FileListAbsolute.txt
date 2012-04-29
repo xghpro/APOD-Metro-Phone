@@ -55,3 +55,4 @@ C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\ru-RU\Microsoft.Advertising.
 C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\sv-SE\Microsoft.Advertising.Mobile.resources.dll
 C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\zh-CN\Microsoft.Advertising.Mobile.resources.dll
 C:\code\APOD-Metro-Phone\APOD-Metro-Phone\Bin\Debug\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+C:\code\APOD-Metro-Phone\APOD-Metro-Phone\obj\Debug\TodayPage.g.i.cs
