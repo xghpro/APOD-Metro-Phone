@@ -17,9 +17,15 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
- <my1:AdControl AdUnitId="87725" ApplicationId="42757b14-5f28-496c-8b1a-3e2371313787" Height="80" VerticalContentAlignment="Top" />
-        <!--Panorama control-->
-    <controls:Panorama Name="panoMain"  Title="APOD Metro">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+    <StackPanel Grid.Row="1" VerticalAlignment="Bottom" >
+      <my1:AdControl AdUnitId="87725" Name="adControl1" ApplicationId="42757b14-5f28-496c-8b1a-3e2371313787" HorizontalAlignment="Center" Width="480" Height="80" />
+    </StackPanel>
+         <!--Panorama control-->
+    <controls:Panorama Name="panoMain" Grid.Row="0"  Title="APOD Metro">
       <controls:Panorama.Background>
         <ImageBrush ImageSource="/APOD-Metro-Phone;component/black.png" />
       </controls:Panorama.Background>
