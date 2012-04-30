@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my1="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -15,9 +16,8 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-    <!--<Image Name="Browser" Source="http://apod.nasa.gov/apod/image/1204/reddwarf_nielsen_1440.jpg"/>
- -->
-    <phone:WebBrowser Name="Browser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"/>
+    
+      <phone:WebBrowser Name="Browser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"/>
     
   </Grid>
 

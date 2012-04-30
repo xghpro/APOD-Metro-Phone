@@ -14,7 +14,11 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
 namespace APOD_Metro_Phone {
-  public partial class MainPage : PhoneApplicationPage {
+  public partial class MainPage : PhoneApplicationPage
+  {
+
+    private string _todayUrl = "";
+
     // Constructor
     public MainPage()
     {
@@ -43,15 +47,15 @@ namespace APOD_Metro_Phone {
 
     void TodayButton_Click(object sender, RoutedEventArgs e)
     {
-      NavigationService.Navigate(new Uri(@"/TodayPage.xaml?url=http://apod.nasa.gov/apod/image/1204/reddwarf_nielsen_1440.jpg", UriKind.Relative));
+      string urlTmpl = @"/TodayPage.xaml?url={0}";
+      NavigationService.Navigate(new Uri(string.Format(urlTmpl, _todayUrl), UriKind.Relative));
     }
 
     private void LoadDescription()
     {
       WebClient client = new WebClient();
       client.DownloadStringCompleted += LoadDescriptionCompleted;
-      client.DownloadStringAsync(new Uri("http://apod.nasa.gov/apod/ap120427.html"));
-
+      client.DownloadStringAsync(new Uri("http://apod.nasa.gov/apod/astropix.html"));
     }
 
     private void LoadDescriptionCompleted(object sender, DownloadStringCompletedEventArgs e)
@@ -61,6 +65,12 @@ namespace APOD_Metro_Phone {
       string two = one.Substring(one.IndexOf(">")+1);
       string three = two.Substring(0, two.IndexOf(@"<p>"));
       Explanation.Text = three;
+
+      string imgroot = "http://apod.nasa.gov/apod/";
+
+      string four = html.Substring(html.IndexOf("<IMG SRC=") + 10);
+      string url = four.Substring(0, four.IndexOf('"'));
+      _todayUrl = imgroot + url; 
     }
 
   

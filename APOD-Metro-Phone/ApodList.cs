@@ -15,13 +15,7 @@ namespace APOD_Metro_Phone
 {
   public class ApodItem
   {
-    public DateTime Date { get; set; }
-
-    public string DateString
-    {
-      get { return Date.ToString(); }
-    }
-
+    public string DateString { get; set; }
     public string ThumbUrl { get; set; }
     public string Title { get; set; }
     public string PageUrl { get; set; }
@@ -45,7 +39,7 @@ namespace APOD_Metro_Phone
         var today = date.AddDays(-day);
         var thumb = string.Format(thumbtmpl, today.Year - 2000, today.Month, today.Day);
         var page = string.Format(pagetmpl, today.Year - 2000, today.Month, today.Day);
-        ApodItem item = new ApodItem {ThumbUrl = thumb, Date = date, Title = "title", PageUrl = page};
+        ApodItem item = new ApodItem { ThumbUrl = thumb, DateString = today.ToLongDateString(), Title = "title", PageUrl = page };
         Add(item);
         LoadPicture(page,item);
 
