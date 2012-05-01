@@ -51,6 +51,7 @@ namespace APOD_Metro_Phone
       WebClient client = new WebClient();
       client.DownloadStringCompleted += LoadPictureCompleted;
       client.DownloadStringAsync(new Uri(pageurl),item);
+      
 
     }
 

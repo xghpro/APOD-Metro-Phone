@@ -12,7 +12,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Portrait"
+    SupportedOrientations="Portrait"   Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -66,7 +66,7 @@
                        
                         <Image Source="{Binding ThumbUrl}"  Width="100"  Margin="12,0,9,0"/>
                         <StackPanel Width="311">
-                          <TextBlock Text="{Binding DateString}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                          <TextBlock Text="{Binding DateString}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}"/>
                         </StackPanel>
                       </StackPanel>
                       
@@ -78,6 +78,19 @@
           </ListBox>
         </Grid>
       </controls:PanoramaItem>
-        </controls:Panorama>
+
+      <controls:PanoramaItem Header="about">
+        <Grid>
+          <StackPanel Margin="10,0,10,0">
+            <TextBlock Height="200" TextWrapping="Wrap">APOD for Windows Phone Metro was developed by Mark Davis of CodeChops as part of a StartUp Weekend project in the spring of 2012. @nohorse @codechops</TextBlock>
+            <HyperlinkButton NavigateUri="http://apod.nasa.gov/apod/astropix.html" 
+                             TargetName="_blank"
+                             Content="Visit NASA's APOD Site on the Web"
+                             HorizontalAlignment="Left"
+                             ></HyperlinkButton>
+          </StackPanel>
+        </Grid>
+      </controls:PanoramaItem>
+    </controls:Panorama>
   </Grid>
 </phone:PhoneApplicationPage>

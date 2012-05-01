@@ -22,7 +22,6 @@ namespace APOD_Metro_Phone {
     // Constructor
     public MainPage()
     {
-      //LoadList();
       InitializeComponent();
 
       // Set the data context of the listbox control to the sample data
@@ -34,11 +33,6 @@ namespace APOD_Metro_Phone {
     private void MainPage_Loaded(object sender, RoutedEventArgs e) {
       if (!App.ViewModel.IsDataLoaded) {
         App.ViewModel.LoadData();
-        Uri uri = new Uri("http://apod.nasa.gov/apod/calendar/today.jpg");
-        var bitmap2 = new BitmapImage(uri);
-        bitmap2.CreateOptions = BitmapCreateOptions.None;
-        //bitmap2.ImageOpened += bitmap2_ImageOpened;
-        //http://apod.nasa.gov/apod/ap120427.html
         LoadDescription();
         TodayButton.Click += TodayButton_Click; 
        
@@ -61,45 +55,35 @@ namespace APOD_Metro_Phone {
     private void LoadDescriptionCompleted(object sender, DownloadStringCompletedEventArgs e)
     {
       string html = e.Result;
-      string one = html.Substring(html.IndexOf("Explanation:"));
-      string two = one.Substring(one.IndexOf(">")+1);
-      string three = two.Substring(0, two.IndexOf(@"<p>"));
-      Explanation.Text = three;
+      try
+      {
+        
+        string one = html.Substring(html.IndexOf("Explanation:"));
+        string two = one.Substring(one.IndexOf(">") + 1);
+        string three = two.Substring(0, two.IndexOf(@"<p>"));
+        Explanation.Text = three;
+      }
+      catch
+      {
+        Explanation.Text = "Visit the NASA web site for a description.";
+      }
 
       string imgroot = "http://apod.nasa.gov/apod/";
 
-      string four = html.Substring(html.IndexOf("<IMG SRC=") + 10);
-      string url = four.Substring(0, four.IndexOf('"'));
-      _todayUrl = imgroot + url; 
+      try
+      {
+        string four = html.Substring(html.IndexOf("<IMG SRC=") + 10);
+        string url = four.Substring(0, four.IndexOf('"'));
+        _todayUrl = imgroot + url; 
+      }
+      catch
+      {
+        _todayUrl = "http://apod.nasa.gov/apod/calendar/today.jpg"; 
+      }
+
     }
 
-  
-
-    private void LoadListCompleted(object sender, DownloadStringCompletedEventArgs e)
-    {
-     
-      ApodItem item = new ApodItem();
-      UIList.Items.Add(item);
-    }
-
-    public ImageSource ResizeImage(ImageSource biInput, double DeltaX, double DeltaY)
-    {
-      WriteableBitmap wbOutput;
-      ScaleTransform stTemp = new System.Windows.Media.ScaleTransform();
-
-      stTemp.ScaleX = DeltaX;
-      stTemp.ScaleY = DeltaY;
-
-      Image imgTemp = new Image();
-      imgTemp.Source = biInput;
-
-      wbOutput = new WriteableBitmap(imgTemp, stTemp);
-      var x = wbOutput.PixelWidth;
-      var y = wbOutput.PixelHeight;
-
-      return wbOutput;
-    }
-
+ 
     private void OlderButton_Click(object sender, RoutedEventArgs e)
     {
       Button b = sender as Button;
